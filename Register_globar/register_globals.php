@@ -1,11 +1,4 @@
 <?php
-/**
- * function to emulate the register_globals setting in PHP
- * for all of those diehard fans of possibly harmful PHP settings :-)
- * @author Ruquay K Calloway
- * @param string $order order in which to register the globals, e.g. 'egpcs' for default
- * @link hxxp://www.php.net/manual/en/security.globals.php#82213
- */
 function register_globals($order = 'egpcs')
 {
     // define a subroutine
@@ -35,11 +28,6 @@ function register_globals($order = 'egpcs')
     }
 }
 
-/**
- * Undo register_globals
- * @author Ruquay K Calloway
- * @link hxxp://www.php.net/manual/en/security.globals.php#82213
- */
 function unregister_globals() {
     if (ini_get(register_globals)) {
         $array = array('_REQUEST', '_SESSION', '_SERVER', '_ENV', '_FILES');
